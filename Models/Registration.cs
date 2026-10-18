@@ -4,7 +4,13 @@ using System.Text;
 
 namespace QuranAcademyManagementSystem.Models
 {
-    internal class Registration
+    public class Registration
     {
+        public int Id { get; set; }
+        public int StudentId { get; set; }
+        public int TeacherID { get; set; }
+        public int AppointmentId { get; set; }
+        public double PaidAmount { get; set; }
+        public double RemainingAmount { get; set; }
     }
 }
