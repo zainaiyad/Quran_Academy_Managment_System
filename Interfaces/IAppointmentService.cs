@@ -9,7 +9,7 @@ namespace QuranAcademyManagementSystem.Interfaces
     {
         string AddAppointment (Appointment appointment);
         string RemoveAppointment (int id);
-        string GetAppointment (int id);
+        Appointment GetAppointment (int id);
         string UpdateAppointment (int id, Appointment appointment);
         List <Appointment> GetAllAppointments ();
     }

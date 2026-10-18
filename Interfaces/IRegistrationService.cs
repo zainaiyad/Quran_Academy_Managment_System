@@ -12,7 +12,7 @@ namespace QuranAcademyManagementSystem.Interfaces
         string ChangeTeacher(int registrationId, int teacherId);
         string ChangeAppointment (int registrationId, int appointmentId);
         string AddToPaid(int registrationId, double Amount);
-        string GetRegistration(int id);
+        Registration GetRegistration(int id);
         List <Registration > GetAllRegistrations();
     }
 }

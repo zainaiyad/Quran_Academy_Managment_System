@@ -9,7 +9,7 @@ namespace QuranAcademyManagementSystem.Interfaces
     {
         string AddTeacher(Teacher teacher);
         string RemoveTeacher(int id);
-        string GetTeacher(int id);
+        Teacher GetTeacher(int id);
         string UpdateTeacher(int id, Teacher teacher);
         List <Teacher> GetAllTeachers();
     }
