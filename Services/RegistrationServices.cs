@@ -1,6 +1,6 @@
 ﻿using QuranAcademyManagementSystem.Interfaces;
 using QuranAcademyManagementSystem.Models;
-using QuranAcademyManagmentSystem.Models;
+using QuranAcademyManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;

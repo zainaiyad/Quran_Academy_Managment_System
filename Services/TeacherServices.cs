@@ -1,5 +1,5 @@
 ﻿using QuranAcademyManagementSystem.Interfaces;
-using QuranAcademyManagmentSystem.models;
+using QuranAcademyManagementSystem.models;
 using System;
 using System.Collections.Generic;
 using System.Text;

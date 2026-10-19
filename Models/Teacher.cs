@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QuranAcademyManagmentSystem.models
+namespace QuranAcademyManagementSystem.Models
 {
     public class Teacher
     {
