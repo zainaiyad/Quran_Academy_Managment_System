@@ -69,9 +69,11 @@ namespace QuranAcademyManagementSystem.Menus
                         Console.WriteLine("Teacher not found.");
                     }
                     break;
+
                 case "3":
                     teacherService.GetAllTeachers();
                     break;
+
                 case "4":
                     Console.WriteLine("Enter Teacher Id to Update:");
                     int idToUpdate = int.Parse(Console.ReadLine());
@@ -101,6 +103,7 @@ namespace QuranAcademyManagementSystem.Menus
                         Console.WriteLine("Teacher not found.");
                     }
                     break;
+
                 case "5":
                     Console.WriteLine("Enter Teacher Id to Remove:");
                     int idToRemove = int.Parse(Console.ReadLine());
@@ -111,6 +114,7 @@ namespace QuranAcademyManagementSystem.Menus
                 case "6":
                     mainMenu.Show();
                     break;
+
                 default:
                     Console.WriteLine("Invalid Choice..");
                     break;

@@ -46,6 +46,7 @@ namespace QuranAcademyManagementSystem.Menus
                     string result = appointmentService.AddAppointment(appointment);
                     Console.WriteLine(result);
                     break;
+
                 case "2":
                     Console.WriteLine("Enter Appointment Id:");
                     int appointmentId = int.Parse(Console.ReadLine());
@@ -62,9 +63,11 @@ namespace QuranAcademyManagementSystem.Menus
                         Console.WriteLine("Appointment not found.");
                     }
                     break;
+
                 case "3":
                     appointmentService.GetAllAppointments();
                     break;
+
                 case "4":
                     Console.WriteLine("Enter Appointment Id to Update:");
                     int updateAppointmentId = int.Parse(Console.ReadLine());
@@ -85,15 +88,18 @@ namespace QuranAcademyManagementSystem.Menus
                         Console.WriteLine("Appointment not found.");
                     }
                     break;
+
                 case "5":
                     Console.WriteLine("Enter Appointment Id to Remove:");
                     int removeAppointmentId = int.Parse(Console.ReadLine());
                     string removeResult = appointmentService.RemoveAppointment(removeAppointmentId);
                     Console.WriteLine(removeResult);
                     break;
+
                 case "6":
                     mainMenu.Show();
                     break;
+
                 default:
                     Console.WriteLine("Invalid Choice..");
                     break;

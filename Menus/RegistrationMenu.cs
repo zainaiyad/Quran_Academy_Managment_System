@@ -57,7 +57,7 @@ namespace QuranAcademyManagementSystem.Menus
                     break;
 
                 case "3":
-                    var registrations = registrationService.GetAllRegistrations();
+                    registrationService.GetAllRegistrations();
                     break;
 
                 case "4":
@@ -90,6 +90,7 @@ namespace QuranAcademyManagementSystem.Menus
                 case "7":
                     mainMenu.Show();
                     break;
+
                 default:
                     Console.WriteLine("Invalid Choice..");
                     break;
