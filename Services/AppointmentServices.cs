@@ -37,7 +37,6 @@ namespace QuranAcademyManagementSystem.Services
             var appointmentToUpdate = appointments.FirstOrDefault(appointment => appointment.Id == id);
             if (appointmentToUpdate != null)
             {
-                appointmentToUpdate.Id = appointment .Id;
                 appointmentToUpdate.EndHour = appointment .EndHour;
                 appointmentToUpdate.StartHour = appointment .StartHour;
                 appointmentToUpdate.Day = appointment .Day;

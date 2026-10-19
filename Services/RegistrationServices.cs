@@ -56,6 +56,7 @@ namespace QuranAcademyManagementSystem.Services
             if (registration != null)
             {
                 registration.PaidAmount += Amount;
+                registration .RemainingAmount -= Amount;
                 return "Add to Paid";
             }
             else

@@ -31,7 +31,6 @@ namespace QuranAcademyManagementSystem.Services
             var studentToUpdate = students.FirstOrDefault(s => s.Id == id);
             if (studentToUpdate != null)
             {
-                studentToUpdate.Id = student .Id;
                 studentToUpdate.Name = student.Name;
                 studentToUpdate.Age = student.Age;
                 studentToUpdate.Email = student.Email;
