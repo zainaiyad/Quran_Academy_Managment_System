@@ -31,8 +31,7 @@ namespace QuranAcademyManagementSystem.Menus
                     case "1":
                         Appointment appointment = new Appointment();
 
-                        Console.WriteLine("Enter Id:");
-                        appointment.Id = int.Parse(Console.ReadLine());
+                        appointment.Id = UserHelper.ReadInt("Enter Id: ");
 
                         Console.WriteLine("Enter Day:");
                         appointment.Day = Console.ReadLine();
@@ -48,8 +47,7 @@ namespace QuranAcademyManagementSystem.Menus
                         break;
 
                     case "2":
-                        Console.WriteLine("Enter Appointment Id:");
-                        int appointmentId = int.Parse(Console.ReadLine());
+                        int appointmentId = UserHelper.ReadInt("Enter Appointment Id: ");
                         Appointment appointmentDetails = appointmentService.GetAppointment(appointmentId);
                         if (appointmentDetails != null)
                         {
@@ -69,8 +67,7 @@ namespace QuranAcademyManagementSystem.Menus
                         break;
 
                     case "4":
-                        Console.WriteLine("Enter Appointment Id to Update:");
-                        int updateAppointmentId = int.Parse(Console.ReadLine());
+                        int updateAppointmentId = UserHelper.ReadInt("Enter Appointment Id: ");
                         Appointment updateAppointment = appointmentService.GetAppointment(updateAppointmentId);
                         if (updateAppointment != null)
                         {

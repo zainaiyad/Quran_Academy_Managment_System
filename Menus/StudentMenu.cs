@@ -1,6 +1,6 @@
 ﻿using QuranAcademyManagementSystem.Interfaces;
 using QuranAcademyManagementSystem.Services;
-using QuranAcademyManagementSystem.models;
+using QuranAcademyManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -39,8 +39,7 @@ namespace QuranAcademyManagementSystem.Menus
                         Console.WriteLine("Enter Student Name:");
                         student.Name = Console.ReadLine();
 
-                        Console.WriteLine("Enter Student Age:");
-                        student.Age = int.Parse(Console.ReadLine());
+                        student.Age = UserHelper.ReadInt("Enter Student Age");
 
                         Console.WriteLine("Enter Student Email:");
                         student.Email = Console.ReadLine();
@@ -48,31 +47,28 @@ namespace QuranAcademyManagementSystem.Menus
                         Console.WriteLine("Enter Student Place:");
                         student.Place = Console.ReadLine();
 
-                        Console.WriteLine("Enter Student Level:");
-                        student.Level = int.Parse(Console.ReadLine());
+                        student.Level = UserHelper.ReadInt("Enter Student Level:");
 
                         string result = studentService.AddStudent(student);
                         Console.WriteLine(result);
                         break;
 
                     case "2":
-                        Console.WriteLine("Enter Student Id to Remove:");
-                        int idToRemove = int.Parse(Console.ReadLine());
+                        int idToRemove = UserHelper.ReadInt("Enter Student Id to Remove:");
                         string removeResult = studentService.RemoveStudent(idToRemove);
                         Console.WriteLine(removeResult);
                         break;
 
                     case "3":
-                        Console.WriteLine("Enter Student Id to Update:");
-                        int idToUpdate = int.Parse(Console.ReadLine());
+                        
+                        int idToUpdate = UserHelper.ReadInt("Enter Student Id to Update");
                         Student updatedStudent = studentService.GetStudent(idToUpdate);
                         if (updatedStudent != null)
                         {
                             Console.WriteLine("Enter Updated Student Name:");
                             updatedStudent.Name = Console.ReadLine();
 
-                            Console.WriteLine("Enter Updated Student Age:");
-                            updatedStudent.Age = int.Parse(Console.ReadLine());
+                            updatedStudent.Age = UserHelper.ReadInt("Enter Updated Student Age");
 
                             Console.WriteLine("Enter Updated Student Email:");
                             updatedStudent.Email = Console.ReadLine();
@@ -80,8 +76,7 @@ namespace QuranAcademyManagementSystem.Menus
                             Console.WriteLine("Enter Updated Student Place:");
                             updatedStudent.Place = Console.ReadLine();
 
-                            Console.WriteLine("Enter Updated Student Level:");
-                            updatedStudent.Level = int.Parse(Console.ReadLine());
+                            updatedStudent.Level = UserHelper.ReadInt("Enter Updated Student Level");
 
                             string updateResult = studentService.UpdateStudent(idToUpdate, updatedStudent);
                             Console.WriteLine(updateResult);
@@ -93,8 +88,7 @@ namespace QuranAcademyManagementSystem.Menus
                         break;
 
                     case "4":
-                        Console.WriteLine("Enter Student Id to Get:");
-                        int idToGet = int.Parse(Console.ReadLine());
+                        int idToGet = UserHelper .ReadInt("Enter Student Id to Get:");
                         student = studentService.GetStudent(idToGet);
                         if (student != null)
                         {

@@ -10,7 +10,7 @@ namespace QuranAcademyManagementSystem.Models
         public string Name { get; set; }
         public int Age { get; set; }
         public string Rank { get; set; }
-        public int Rewaya { get; set; }
+        public string Rewaya { get; set; }
         public string Email { get; set; }
     }
 }

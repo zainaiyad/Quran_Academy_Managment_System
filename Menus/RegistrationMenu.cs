@@ -33,14 +33,10 @@ namespace QuranAcademyManagementSystem.Menus
                     case "1":
                         Registration registration = new Registration();
 
-                        Console.WriteLine("Enter Id:");
-                        registration.Id = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter Student Id:");
-                        registration.StudentId = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter Teacher Id:");
-                        registration.TeacherId = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter Appointment Id:");
-                        registration.AppointmentId = int.Parse(Console.ReadLine());
+                        registration.Id = UserHelper.ReadInt("Enter Id: ");
+                        registration.StudentId = UserHelper.ReadInt("Enter Student Id: ");
+                        registration.TeacherId = UserHelper.ReadInt("Enter Teacher Id: ");
+                        registration.AppointmentId = UserHelper.ReadInt("Enter Appointment Id: ");
                         Console.WriteLine("Enter Paid Amount:");
                         registration.PaidAmount = double.Parse(Console.ReadLine());
                         Console.WriteLine("Enter Remaining Amount:");
@@ -50,8 +46,7 @@ namespace QuranAcademyManagementSystem.Menus
                         break;
 
                     case "2":
-                        Console.WriteLine("Enter Registration Id to Delete Registration:");
-                        int registrationId = int.Parse(Console.ReadLine());
+                        int registrationId = UserHelper.ReadInt("Enter Registration Id: ");
                         result = registrationService.DropStudent(registrationId);
                         Console.WriteLine(result);
                         break;
@@ -61,26 +56,21 @@ namespace QuranAcademyManagementSystem.Menus
                         break;
 
                     case "4":
-                        Console.WriteLine("Enter Registration Id to Change Teacher:");
-                        registrationId = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter New Teacher Id:");
-                        int teacherId = int.Parse(Console.ReadLine());
+                        registrationId = UserHelper.ReadInt("Enter Registration Id: ");
+                        int teacherId = UserHelper.ReadInt("Enter New Teacher Id: ");
                         result = registrationService.ChangeTeacher(registrationId, teacherId);
                         Console.WriteLine(result);
                         break;
 
                     case "5":
-                        Console.WriteLine("Enter Registration Id to Change Appointment:");
-                        registrationId = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter New Appointment Id:");
-                        int newAppointmentId = int.Parse(Console.ReadLine());
+                        registrationId = UserHelper.ReadInt("Enter Registration Id: ");
+                        int newAppointmentId = UserHelper.ReadInt("Enter New Appointment Id: ");
                         result = registrationService.ChangeAppointment(registrationId, newAppointmentId);
                         Console.WriteLine(result);
                         break;
 
                     case "6":
-                        Console.WriteLine("Enter Registration Id to Add to Paid:");
-                        registrationId = int.Parse(Console.ReadLine());
+                        registrationId = UserHelper.ReadInt("Enter Registration Id: ");
                         Console.WriteLine("Enter Amount to Add:");
                         double amount = double.Parse(Console.ReadLine());
                         result = registrationService.AddToPaid(registrationId, amount);
