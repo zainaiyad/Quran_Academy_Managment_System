@@ -32,7 +32,7 @@ namespace QuranAcademyManagementSystem.Services
             var registration = registrations.FirstOrDefault(registration => registration.Id == registrationId);
             if (registration != null)
             {
-                registration.TeacherID = teacherId;
+                registration.TeacherId = teacherId;
                 return "Changed!";
             }
             else
