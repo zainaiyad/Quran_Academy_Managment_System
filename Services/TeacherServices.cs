@@ -35,7 +35,12 @@ namespace QuranAcademyManagementSystem.Services
             var teacherToUpdate = teachers.FirstOrDefault(t => t.Id == id);
             if (teacherToUpdate != null)
             {
-                teacherToUpdate = teacher;
+                teacherToUpdate.Id = teacher.Id;
+                teacherToUpdate.Name = teacher.Name;
+                teacherToUpdate.Age = teacher.Age;
+                teacherToUpdate.Rank = teacher.Rank;
+                teacherToUpdate.Email = teacher.Email;
+               
                 return "Updated Successfully";
             }
             else
