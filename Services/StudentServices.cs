@@ -1,5 +1,5 @@
 ﻿using QuranAcademyManagementSystem.Interfaces;
-using QuranAcademyManagementSystem.models;
+using QuranAcademyManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -50,6 +50,18 @@ namespace QuranAcademyManagementSystem.Services
         public List<Student> GetAllStudents()
         {
             return students;
+        }
+        public static List<Student> studentFilter(List<Student> students, Func<Student, bool> filter)
+        {
+            List<Student> filteredStudents = new List<Student>();
+            foreach (var student in students)
+            {
+                if (filter(student))
+                {
+                    filteredStudents.Add(student);
+                }
+            }
+            return filteredStudents;
         }
     }
 }

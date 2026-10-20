@@ -6,6 +6,18 @@ namespace QuranAcademyManagementSystem
 {
     internal class Program
     {
+        public static List<Student> studentFilter(List<Student> students, Func<Student, bool> filter)
+        {
+            List<Student> filteredStudents = new List<Student>();
+            foreach (var student in students)
+            {
+                if (filter(student))
+                {
+                    filteredStudents.Add(student);
+                }
+            }
+            return filteredStudents;
+        }
         static void Main(string[] args)
         {
             List<Registration> registrations = new List<Registration>();
@@ -29,4 +41,6 @@ namespace QuranAcademyManagementSystem
 
         }
     }
+    
 }
+

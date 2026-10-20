@@ -24,7 +24,8 @@ namespace QuranAcademyManagementSystem.Menus
                 Console.WriteLine("3. Update Student");
                 Console.WriteLine("4. Get Student");
                 Console.WriteLine("5. View Students");
-                Console.WriteLine("6. Back");
+                Console.WriteLine("6. View Students Under a Certain Age");
+                Console.WriteLine("7. Back");
 
                 var choice = Console.ReadLine();
 
@@ -109,6 +110,20 @@ namespace QuranAcademyManagementSystem.Menus
                         studentService.GetAllStudents(); break;
 
                     case "6":
+                        int ageLimit = UserHelper.ReadInt("Enter Age Limit:");
+                        var filteredStudents = StudentServices.studentFilter(studentService.GetAllStudents(), s => s.Age < ageLimit);
+                        foreach (var filteredStudent in filteredStudents)
+                        {
+                            Console.WriteLine($"Student Id: {filteredStudent.Id}");
+                            Console.WriteLine($"Student Name: {filteredStudent.Name}");
+                            Console.WriteLine($"Student Age: {filteredStudent.Age}");
+                            Console.WriteLine($"Student Email: {filteredStudent.Email}");
+                            Console.WriteLine($"Student Place: {filteredStudent.Place}");
+                            Console.WriteLine($"Student Level: {filteredStudent.Level}");
+                        }
+                        break;
+
+                    case "7":
                         return;
 
                     default: Console.WriteLine("Invalid choice. Please try again."); break;

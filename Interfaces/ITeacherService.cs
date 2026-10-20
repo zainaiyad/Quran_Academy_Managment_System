@@ -1,4 +1,4 @@
-﻿using QuranAcademyManagementSystem.models;
+﻿using QuranAcademyManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;

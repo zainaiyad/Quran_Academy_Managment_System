@@ -1,5 +1,5 @@
 ﻿using QuranAcademyManagementSystem.Interfaces;
-using QuranAcademyManagementSystem.models;
+using QuranAcademyManagementSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -45,7 +45,7 @@ namespace QuranAcademyManagementSystem.Menus
                         teacher.Rank = Console.ReadLine();
 
                         Console.WriteLine("Enter Teacher Rewaya: ");
-                        teacher.Rewaya = int.Parse(Console.ReadLine());
+                        teacher.Rewaya = Console.ReadLine();
 
                         string result = teacherService.AddTeacher(teacher);
                         Console.WriteLine(result);
@@ -93,7 +93,7 @@ namespace QuranAcademyManagementSystem.Menus
                             updatedTeacher.Rank = Console.ReadLine();
 
                             Console.WriteLine("Enter Updated Teacher Rewaya:");
-                            updatedTeacher.Rewaya = int.Parse(Console.ReadLine());
+                            updatedTeacher.Rewaya = Console.ReadLine();
 
                             string updateResult = teacherService.UpdateTeacher(idToUpdate, updatedTeacher);
                             Console.WriteLine(updateResult);
@@ -105,8 +105,7 @@ namespace QuranAcademyManagementSystem.Menus
                         break;
 
                     case "5":
-                        Console.WriteLine("Enter Teacher Id to Remove:");
-                        int idToRemove = int.Parse(Console.ReadLine());
+                        int idToRemove = UserHelper.ReadInt("Enter Teacher Id to Remove:");
                         string removeResult = teacherService.RemoveTeacher(idToRemove);
                         Console.WriteLine(removeResult);
                         break;
